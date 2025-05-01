@@ -2386,8 +2386,11 @@ PRG008_AB83:
 	ASL A
 	ASL A
 	ASL A
-	ADD #$40
-	TAY		 ; Y = ((selected top speed - 1) << 3) + $40 ??
+	ADD #$40	
+	; Y = 40 if slippery
+	; Y = 46 if very slippery
+	; Y = ((Player_Slippery - 1) << 3) + $40
+	TAY
 	BNE PRG008_AB9E	 ; And as long as that's not zero, jump to PRG008_AB9E
 
 PRG008_AB98:
