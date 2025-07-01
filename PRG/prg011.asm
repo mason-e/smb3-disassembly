@@ -2191,17 +2191,17 @@ MapBonusChk_NSpade:
 	LDA Player_Score
 	CMP Map_NSpade_NextScore
 	BLT PRG011_ACF0	 ; If Score high digit < Map_NSpade_NextScore, jump to PRG011_ACF0 (RTS)
-	BEQ PRG011_AC97	 ; If Score high digit = Map_NSpade_NextScore, jump to PRG011_AC97
+	BEQ PRG011_ACF0	 ; If Score high digit = Map_NSpade_NextScore, jump to PRG011_ACF0
 
-	JMP PRG011_ACAC	 ; Jump to PRG011_ACAC
+	JMP PRG011_ACF0	 ; Jump to PRG011_ACF0
 
 PRG011_AC97:
 	LDA Player_Score+1
 	CMP Map_NSpade_NextScore+1
 	BLT PRG011_ACF0	 ; If Score middle digit < Map_NSpade_NextScore+1, jump to PRG011_ACF0 (RTS)
-	BEQ PRG011_ACA4	 ; If Score middle digit = Map_NSpade_NextScore+1, jump to PRG011_ACA4
+	BEQ PRG011_ACF0	 ; If Score middle digit = Map_NSpade_NextScore+1, jump to PRG011_ACF0
 
-	JMP PRG011_ACAC	 ; Jump to PRG011_ACAC
+	JMP PRG011_ACF0	 ; Jump to PRG011_ACF0
 
 PRG011_ACA4:
 	LDA Player_Score+2
