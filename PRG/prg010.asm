@@ -2836,8 +2836,8 @@ PRG010_CEF4:
 	; Player's on a hand trap...
 	LDX Player_Current
 	LDA RandomN,X	 
-	AND #$01			; 50/50 chance
-	BNE WorldMap_UpdateAndDraw	; Player has 50/50 chance we just jump to WorldMap_UpdateAndDraw
+	AND #$00			
+	BNE WorldMap_UpdateAndDraw	; No chance of jumping to this
 
 	INC Map_Operation	 	; Otherwise, Map_Operation++ (now $E)
 	JMP PRG010_CEAC	 		; Jump to PRG010_CEAC
