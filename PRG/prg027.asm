@@ -160,7 +160,7 @@ PRG027_A0CD:
 	; 8 = P-Wing
 	; D = Music Box
 LetterItem_ByWorld:
-	.byte $08, $07, $0D, $08, $07, $08, $00
+	.byte $00, $00, $00, $00, $00, $00, $00
 
 	; Letter's included item patterns and attributes for sprite left and right.
 	; Of note, all item types are defined (although mushroom and frog suit will
@@ -182,8 +182,6 @@ Letter_PrincessSprites:
 	.byte $88, $8F, $01, $30
 	.byte $88, $AD, $01, $38
 	.byte $88, $AF, $01, $40
-	.byte $88, $FF, $01, $C0
-	.byte $88, $FF, $41, $C8
 Letter_PrincessSprites_End
 
 TAndK_WaitForA:
