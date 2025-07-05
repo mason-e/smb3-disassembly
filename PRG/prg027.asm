@@ -132,23 +132,6 @@ PRG027_A0A8:
 	; Load up the letter's palette
 	LDY #31		; Y = 31 (all colors)
 PRG027_A0B2:
-	LDA Letter_Palette,Y
-	STA Pal_Data,Y
-	DEY		 ; Y--
-	BPL PRG027_A0B2	 ; While Y >= 0, loop
-
-	JSR Palette_PrepareFadeInTK	 ; Fade in (the letter)
-
-	; Set scroll up high (the letter is actually level data)
-	LDA #$18
-	STA <Vert_Scroll
-
-	; Level_VertScrollH = 1
-	LDA #$01
-	STA Level_VertScrollH
-
-	JSR Letter_GiveIncludedItem	 ; Give item included with letter (if any)
-
 	INC CineKing_State	 ; CineKing_State = 4 
 
 PRG027_A0CD:
@@ -230,9 +213,6 @@ PRG027_A166:
 	JSR Letter_PaletteKludge	 ; Not sure what this is for; sets up the graphics buffer to patch a single palette color?
 
 PRG027_A169:
-	LDA <Pad_Input
-	BPL PRG027_A174		; If Player is NOT pressing A, jump to PRG027_A174
-
 	INC <Level_ExitToMap	; Exiting to map!
 
 	; World_EnterState = 0
@@ -444,7 +424,7 @@ PRG027_A2B3:
 	RTS		 ; Return
 
 KingText_Typical:
-	; "Oh,thank heavens!" / "I'm back to my old" / "self again." / "Thank you so much." / "Here is a letter" / "from the Princess."
+	; "Oh,thank heavens!" / "I'm back to my old" / "self again." / "Thank you so much." / "Please, you must" / "find the Princess."
 
 	;       O    h    ,    t    h    a    n    k         h    e    a    v    e    n    s    !
 	.byte $BE, $D7, $9A, $CD, $D7, $D0, $DD, $DA, $FE, $D7, $D4, $D0, $CF, $D4, $DD, $CC, $EA, $FE, $FE, $FE
@@ -458,11 +438,11 @@ KingText_Typical:
 	;       T    h    a    n    k         y    o    u         s    o         m    u    c    h    .
 	.byte $C3, $D7, $D0, $DD, $DA, $FE, $8C, $DE, $CE, $FE, $CC, $DE, $FE, $DC, $CE, $D2, $D7, $E9, $FE, $FE
 
-	;       H    e    r    e         i    s         a         l    e    t    t    e    r
-	.byte $B7, $D4, $CB, $D4, $FE, $D8, $CC, $FE, $D0, $FE, $DB, $D4, $CD, $CD, $D4, $CB, $FE, $FE, $FE, $FE
+	;       P    l    e    a    s    e    ,         y    o    u         m    u    s    t
+	.byte $BF, $DB, $D4, $D0, $CC, $D4, $9A, $FE, $8C, $DE, $CE, $FE, $DC, $CE, $CC, $CD, $FE, $FE, $FE, $FE
 
-	;       f    r    o    m         t    h    e         P    r    i    n    c    e    s    s    .
-	.byte $D5, $CB, $DE, $DC, $FE, $CD, $D7, $D4, $FE, $BF, $CB, $D8, $DD, $D2, $D4, $CC, $CC, $E9, $FE, $FE
+	;       f    i    n    d         t    h    e         P    r    i    n    c    e    s    s    .
+	.byte $D5, $D8, $DD, $D3, $FE, $CD, $D7, $D4, $FE, $BF, $CB, $D8, $DD, $D2, $D4, $CC, $CC, $E9, $FE, $FE
 
 KingText_Frog:
 	; "Oh me,oh my!" / "You've been" / "transformed!" / "Shall I change you" / "back with this wand?"
