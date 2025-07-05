@@ -11,6 +11,6 @@ nesasm smb3.asm
 
 Intended for use for research into the inner workings of SMB3 and highly technical ROM hacks (such as Super Mario Bros. 3Mix)
 
-## Branches
+## Bypass Letter Screen
 
-I've included branches in this repo for changes I've ended up implementing myself in my own work. Feel free to use any of these in your hack. I don't have a tool for patching directly from the changed assembly, so the way I'd suggest going about it is to compile the ASM, then determine the changes in a hex comparison or patch onto your in-progress hack.
+This change skips the world-ending letters from the Princess (and Bowser) and loads straight into the next world. The King's text was also changed to make sense with this.
