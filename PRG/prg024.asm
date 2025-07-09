@@ -6343,12 +6343,6 @@ Ending2_EndPicSprites2:
 	.byte $A9, $B7, $02, $D8
 Ending2_EndPicSprites2_End
 
-Ending2_EndPicSprites3:
-	.byte $3F, $B1, $01, $30
-	.byte $3F, $B1, $41, $38
-	.byte $47, $B5
-
-	; List continued in PRG025
 
 
 

@@ -13,8 +13,10 @@
 ;---------------------------------------------------------------------------
 
 	; Ending Sprite list continued from PRG024 ...
-
-	.byte           $01, $28
+Ending2_EndPicSprites3:
+	.byte $3F, $B1, $01, $30
+	.byte $3F, $B1, $41, $38
+	.byte $47, $B5, $01, $28
 	.byte $4F, $B7, $01, $20
 	.byte $57, $B5, $01, $18
 	.byte $6F, $01, $00, $D8
